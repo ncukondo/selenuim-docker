@@ -1,0 +1,14 @@
+# information from https://hodalog.com/use-selenium-on-docker/
+# run   docker-compose run selenium python test.py
+# shell docker-compose run selenium /bin/ash
+version: '3'
+
+services:
+  selenium:
+    container_name: selenium
+    build:
+      context: .
+      dockerfile: selenium.dockerfile
+    tty: true
+    volumes:
+        - ./app:/app
